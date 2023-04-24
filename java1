@@ -1,4 +1,4 @@
-package com.example.atividadesenai;
+package com.example.myapplication;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -7,31 +7,24 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-import java.util.Random;
-
 public class MainActivity extends AppCompatActivity {
 
-    private Button calcular;
-
+    private Button BtnResultado;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        calcular=findViewById(R.id.btnCalcular);
-        calcular.setOnClickListener(new View.OnClickListener() {
+        BtnResultado = findViewById(R.id.BtnResultado);
+
+        BtnResultado.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
-                Intent intencao = new Intent (getApplicationContext(),resultado.class);
-                int numero = new Random().nextInt (2);
-                intencao.putExtra("numero", numero);
-                startActivity(intencao);
-
-
-
+                Intent intent = new Intent(getApplicationContext(),MainActivity2.class);
+                startActivity(intent);
             }
         });
+
     }
 }
